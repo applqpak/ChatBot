@@ -52,7 +52,7 @@
 
       @mkdir($this->dataPath());
 
-      $this->cfg = new Config($this->dataPath() . "config.yml", Config::YAML, array("messages" => array("hello" => "Hello, %p!")));
+      $this->cfg = new Config($this->dataPath() . "config.yml", Config::YAML, array("# Please make the messages lower-case, the reply can be upper-case.", "messages" => array("hello" => "Hello, %p!")));
 
       $this->server()->logger()->info(PREFIX . "Enabled.");
 
@@ -73,6 +73,28 @@
 
     public function onChat(PlayerChatEvent $event)
     {
+
+      $player = $event->getPlayer();
+
+      $player_name = $player->getName();
+
+      $player_message = $event->getMessage();
+
+      $messages = $this->cfg->get("messages");
+
+      foreach($messages as $key => $message)
+      {
+
+        // Check if the message the player sent is equal to a message in the Config, if so, reply with the corresponding message
+
+        if(strtolower($player_message) === $message)
+        {
+
+          $player->sendMessage($messages[$message]);
+
+        }
+
+      }
 
     }
 
