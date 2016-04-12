@@ -11,10 +11,6 @@
   class Main extends PluginBase implements Listener
   {
 
-    // Create PREFIX constant
-
-    const PREFIX = TF::RED . "[" . TF::AQUA . "ChatBot" . TF::RED . "] " . TF::RESET;
-
     // Our own functions
 
     public function dataPath()
@@ -54,7 +50,7 @@
 
       $this->cfg = new Config($this->dataPath() . "config.yml", Config::YAML, array("# Please make the messages lower-case, the reply can be upper-case.", "messages" => array("hello" => "Hello, %p!")));
 
-      $this->logger()->info(PREFIX . "Enabled.");
+      $this->logger()->info("[ChatBot] Enabled.");
 
     }
 
@@ -65,7 +61,7 @@
 
       $this->cfg->save();
 
-      $this->logger()->info(PREFIX . "Disabled. Saved Config.");
+      $this->logger()->info("[ChatBot] Disabled. Saved Config.");
 
     }
 
@@ -89,6 +85,8 @@
 
         if(strtolower($player_message) === $message)
         {
+
+          $this->logger->info("[ChatBot] DEBUG"); // ##DEBUG
 
           $player->sendMessage(str_replace(array("%p", "{player}"), array($player_name, $player_name), $messages[$message]));
 
