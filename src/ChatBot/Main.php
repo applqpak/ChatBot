@@ -52,7 +52,7 @@
 
       $this->cfg = new Config($this->dataPath() . "config.yml", Config::YAML, array("messages" => array("hello" => "Hello, %p!")));
 
-      $this->logger()->info("[ChatBot] Enabled.");
+      $this->logger()->info("Enabled.");
 
     }
 
@@ -63,7 +63,7 @@
 
       $this->cfg->save();
 
-      $this->logger()->info("[ChatBot] Disabled. Saved Config.");
+      $this->logger()->info("Disabled. Saved Config.");
 
     }
 
