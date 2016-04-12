@@ -46,6 +46,8 @@
     public function onEnable()
     {
 
+      $this->server()->pluginManager()->registerEvents($this, $this);
+
       @mkdir($this->dataPath());
 
       $this->cfg = new Config($this->dataPath() . "config.yml", Config::YAML, array("messages" => array("hello" => "Hello, %p!")));
