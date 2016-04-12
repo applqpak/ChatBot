@@ -78,6 +78,8 @@
 
       $messages = $this->cfg->get("messages");
 
+      $this->logger(var_dump($messages));
+
       foreach($messages as $key => $message)
       {
 
