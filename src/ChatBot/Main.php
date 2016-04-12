@@ -80,7 +80,7 @@
 
       $messages = $this->cfg->get("messages");
 
-      $this->logger(var_dump($messages));
+      $this->logger()->info(var_dump($messages));
 
       foreach($messages as $message => $reply)
       {
