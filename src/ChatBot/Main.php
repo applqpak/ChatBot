@@ -90,7 +90,7 @@
         if(strtolower($player_message) === $message)
         {
 
-          $this->logger->info("[ChatBot] DEBUG"); // ##DEBUG
+          $this->logger()->info("[ChatBot] DEBUG"); // ##DEBUG
 
           $player->sendMessage(str_replace(array("%p", "{player}"), array($player_name, $player_name), $messages[$message]));
 
