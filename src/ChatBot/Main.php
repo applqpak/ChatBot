@@ -48,7 +48,7 @@
 
       @mkdir($this->dataPath());
 
-      $this->cfg = new Config($this->dataPath() . "config.yml", Config::YAML, array("# Please make the messages lower-case, the reply can be upper-case.", "messages" => array("hello" => "Hello, %p!")));
+      $this->cfg = new Config($this->dataPath() . "config.yml", Config::YAML, array("messages" => array("hello" => "Hello, %p!")));
 
       $this->logger()->info("[ChatBot] Enabled.");
 
