@@ -90,7 +90,7 @@
         if(strtolower($player_message) === $message)
         {
 
-          $player->sendMessage($prefix . str_replace(array("%p", "{player}"), array($player_name, $player_name), $messages[$message]));
+          $player->sendMessage($prefix . " " . str_replace(array("%p", "{player}"), array($player_name, $player_name), $messages[$message]));
 
         }
 
