@@ -50,7 +50,7 @@
 
       @mkdir($this->dataPath());
 
-      $this->cfg = new Config($this->dataPath() . "config.yml", Config::YAML, array("messages" => array("hello" => "Hello, %p!")));
+      $this->cfg = new Config($this->dataPath() . "config.yml", Config::YAML, array("prefix" => "[ChatBot]", "messages" => array("hello" => "Hello, %p!")));
 
       $this->logger()->info("Enabled.");
 
@@ -80,6 +80,8 @@
 
       $messages = $this->cfg->get("messages");
 
+      $prefix = $this->cfg->get("prefix");
+
       foreach($messages as $message => $reply)
       {
 
@@ -88,7 +90,7 @@
         if(strtolower($player_message) === $message)
         {
 
-          $player->sendMessage(str_replace(array("%p", "{player}"), array($player_name, $player_name), $messages[$message]));
+          $player->sendMessage($prefix . str_replace(array("%p", "{player}"), array($player_name, $player_name), $messages[$message]));
 
         }
 
