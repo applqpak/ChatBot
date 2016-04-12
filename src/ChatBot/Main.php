@@ -80,7 +80,7 @@
 
       $this->logger(var_dump($messages));
 
-      foreach($messages as $key => $message)
+      foreach($messages as $message => $reply)
       {
 
         // Check if the message the player sent is equal to a message in the Config, if so, reply with the corresponding message
