@@ -4,7 +4,7 @@
 
   use pocketmine\plugin\PluginBase;
   use pocketmine\event\Listener;
-  use pocketmine\event\PlayerChatEvent;
+  use pocketmine\event\player\PlayerChatEvent;
   use pocketmine\utils\Config;
   use pocketmine\utils\TextFormat as TF;
 
