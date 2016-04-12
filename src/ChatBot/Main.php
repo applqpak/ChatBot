@@ -80,8 +80,6 @@
 
       $messages = $this->cfg->get("messages");
 
-      $this->logger()->info(var_dump($messages));
-
       foreach($messages as $message => $reply)
       {
 
@@ -89,8 +87,6 @@
 
         if(strtolower($player_message) === $message)
         {
-
-          $this->logger()->info("[ChatBot] DEBUG"); // ##DEBUG
 
           $player->sendMessage(str_replace(array("%p", "{player}"), array($player_name, $player_name), $messages[$message]));
 
