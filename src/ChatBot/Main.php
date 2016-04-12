@@ -34,7 +34,7 @@
     public function logger()
     {
 
-      return $this->server()->getLogger();
+      return $this->getLogger();
 
     }
 
@@ -54,7 +54,7 @@
 
       $this->cfg = new Config($this->dataPath() . "config.yml", Config::YAML, array("# Please make the messages lower-case, the reply can be upper-case.", "messages" => array("hello" => "Hello, %p!")));
 
-      $this->server()->logger()->info(PREFIX . "Enabled.");
+      $this->logger()->info(PREFIX . "Enabled.");
 
     }
 
@@ -65,7 +65,7 @@
 
       $this->cfg->save();
 
-      $this->server()->logger()->info(PREFIX . "Disabled. Saved Config.");
+      $this->logger()->info(PREFIX . "Disabled. Saved Config.");
 
     }
 
