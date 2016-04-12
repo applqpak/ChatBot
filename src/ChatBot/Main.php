@@ -46,7 +46,7 @@
     public function onEnable()
     {
 
-      $this->server()->pluginManager()->registerEvents($this, $this);
+      $this->getServer()->getPluginManager()->registerEvents($this, $this);
 
       @mkdir($this->dataPath());
 
