@@ -61,9 +61,7 @@
     public function onDisable()
     {
 
-      $this->cfg->save();
-
-      $this->logger()->info("Disabled. Saved Config.");
+      $this->logger()->info("Disabled.");
 
     }
 
